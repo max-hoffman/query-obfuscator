@@ -42,10 +42,6 @@ func main() {
 
 func _main(ctx *sql.Context, schemaInput, schemaOutput, queryDir, queryOutput string) {
 	mappings := newMapping()
-
-	// do schemas the same way
-	// use transform to do selects
-	//
 	obfuscateSchema(ctx, schemaInput, schemaOutput, mappings)
 	applyMappingsToSelects(ctx, queryDir, queryOutput, mappings)
 }
