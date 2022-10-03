@@ -20,8 +20,8 @@ func TestObfuscate(t *testing.T) {
 
 	mappings := newMapping()
 	obfuscateSchema(ctx, schemasInput, schemasOutput, mappings)
-	applyMappingsToQueries(q1Dir, q1Output, mappings)
-	applyMappingsToQueries(q2Dir, q2Output, mappings)
+	applyMappingsToSelects(ctx, q1Dir, q1Output, mappings)
+	applyMappingsToSelects(ctx, q2Dir, q2Output, mappings)
 }
 
 func scanQueries(data []byte, atEOF bool) (advance int, token []byte, err error) {
